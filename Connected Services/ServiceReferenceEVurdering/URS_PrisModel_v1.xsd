@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:basis="http://efpi.dk/basis/xml/schemas/2007/07/01/" xmlns:bbr="http://rep.oio.dk/bbr.dk/xml/schemas/2005/12/15/" xmlns:tns="http://enettet.dk/prismodel/xml/schemas/URS_PrisModel_v1" xmlns:xkom="http://rep.oio.dk/xkom.dk/xml/schemas/2006/01/06/" xmlns:sagsnummeridentifikator="http://efpi.dk/ehp2011/xml/schemas/EFPI_SagsnummerIdentifikator_v1" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://enettet.dk/prismodel/xml/schemas/URS_PrisModel_v1" xml:lang="DA" xmlns="http://www.w3.org/2001/XMLSchema">
+  <import schemaLocation="https://test-e-vurderingspakke.e-nettet.dk:443/efpi/prismodel/PrisModel.URS?xsd=../../../../rep.oio.dk/xkom.dk/xml/schemas/2006/01/06/xkom.xsd" namespace="http://rep.oio.dk/xkom.dk/xml/schemas/2006/01/06/" />
+  <import schemaLocation="https://test-e-vurderingspakke.e-nettet.dk:443/efpi/prismodel/PrisModel.URS?xsd=../../../../basis/xml/schemas/2007/07/01/BASIS_eFPIDetailsErrorType.xsd" namespace="http://efpi.dk/basis/xml/schemas/2007/07/01/" />
+  <import schemaLocation="https://test-e-vurderingspakke.e-nettet.dk:443/efpi/prismodel/PrisModel.URS?xsd=../../../../basis/xml/schemas/2007/07/01/BASIS_eFPIfejl.xsd" namespace="http://efpi.dk/basis/xml/schemas/2007/07/01/" />
+  <import schemaLocation="https://test-e-vurderingspakke.e-nettet.dk:443/efpi/prismodel/PrisModel.URS?xsd=../../../../efpi.dk/ehp2011/xml/schemas/EFPI_SagsnummerIdentifikator_v1.xsd" namespace="http://efpi.dk/ehp2011/xml/schemas/EFPI_SagsnummerIdentifikator_v1" />
+  <import schemaLocation="https://test-e-vurderingspakke.e-nettet.dk:443/efpi/prismodel/PrisModel.URS?xsd=../../../../rep.oio.dk/bbr.dk/xml/schemas/2005/12/15/bbr.xsd" namespace="http://rep.oio.dk/bbr.dk/xml/schemas/2005/12/15/" />
+  <element name="PrisModelTilmeld" type="tns:PrisModelTilmeldRequestType" />
+  <element name="PrisModelTilmeldResponse" type="tns:PrisModelTilmeldResponseType" />
+  <element name="HaendelseIndsend" type="tns:HaendelseIndsendRequestType" />
+  <element name="HaendelseIndsendResponse" type="tns:HaendelseIndsendResponseType" />
+  <element name="PrisModelHent" type="tns:PrisModelHentRequestType" />
+  <element name="PrisModelHentResponse" type="tns:PrisModelHentResponseType" />
+  <element name="error" type="basis:eFPIDetailsErrorType" />
+  <complexType name="PrisModelTilmeldRequestType">
+    <sequence>
+      <element name="PartId" type="string" />
+      <element name="SystemleverandoerNummer" type="int" />
+      <element name="PrisModel" type="tns:PrisModelType" />
+    </sequence>
+  </complexType>
+  <complexType name="PrisModelTilmeldResponseType">
+    <sequence />
+  </complexType>
+  <complexType name="HaendelseIndsendRequestType">
+    <sequence>
+      <element name="PartId" type="string" />
+      <element name="SystemleverandoerNummer" type="int" />
+      <element name="Haendelse" type="tns:HaendelseType" />
+    </sequence>
+  </complexType>
+  <complexType name="HaendelseIndsendResponseType">
+    <sequence />
+  </complexType>
+  <complexType name="PrisModelHentRequestType">
+    <sequence>
+      <element name="PartId" type="string" />
+      <element name="Dato" type="dateTime" />
+    </sequence>
+  </complexType>
+  <complexType name="PrisModelHentResponseType">
+    <sequence>
+      <element name="ErSuspenderetNu" type="boolean" />
+      <element minOccurs="0" name="TilmeldingAktivPaaDato" type="tns:PrisModelTilmelding" />
+      <element minOccurs="0" name="AfventendeTilmelding" type="tns:PrisModelTilmelding" />
+    </sequence>
+  </complexType>
+  <complexType name="PrisModelTilmelding">
+    <sequence>
+      <element name="Dato" type="dateTime" />
+      <element name="PartId" type="string" />
+      <element name="SystemleverandoerNummer" type="int" />
+      <element name="PrisModel" type="tns:PrisModelType" />
+      <element name="UdfoertDato" nillable="true" type="dateTime" />
+    </sequence>
+  </complexType>
+  <complexType name="HaendelseType">
+    <sequence>
+      <element name="Haendelsestype" type="tns:HaendelsestypeType" />
+      <element name="HaendelseDato" type="dateTime" />
+      <element ref="bbr:RealPropertyStructure" />
+      <element name="EjendomsType" type="tns:EjendomstypeType" />
+      <element name="EjendomsmaeglerSagsnummer" type="sagsnummeridentifikator:SagsnummerIdentifikatorType" />
+      <element ref="xkom:AddressPostal" />
+    </sequence>
+  </complexType>
+  <simpleType name="PrisModelType">
+    <restriction base="string">
+      <enumeration value="Transaktion" />
+      <enumeration value="Edokumentation" />
+      <enumeration value="Suspenderet" />
+      <enumeration value="IkkeSat" />
+    </restriction>
+  </simpleType>
+  <simpleType name="EjendomstypeType">
+    <restriction base="string">
+      <enumeration value="Bolig" />
+      <enumeration value="Erhverv" />
+      <enumeration value="Andel" />
+      <enumeration value="Grund" />
+      <enumeration value="Landejendom" />
+      <enumeration value="Fritidshus" />
+      <enumeration value="Fritidsgrund" />
+      <enumeration value="Villalejlighed" />
+    </restriction>
+  </simpleType>
+  <simpleType name="HaendelsestypeType">
+    <restriction base="string">
+      <enumeration value="SatTilSalg" />
+      <enumeration value="BolighandelAfsluttet" />
+    </restriction>
+  </simpleType>
+</schema>

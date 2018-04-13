@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b1c73bcd-47f7-4cf8-b59b-b870927b99f4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="XKOM_EmailAddressIdentifier.xsd" MetadataType="Schema" ID="2c5b1bd9-73c9-4ca0-b793-05327de5bd84" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../../../../rep.oio.dk/xkom.dk/xml/schemas/2005/03/15/XKOM_EmailAddressIdentifier.xsd" />
+    <MetadataFile FileName="EFPI_SagsnummerIdentifikator_v1.xsd" MetadataType="Schema" ID="fafda3cb-594a-41ff-ae2b-7c340b8e78bc" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../../../../efpi.dk/ehp2011/xml/schemas/EFPI_SagsnummerIdentifikator_v1.xsd" />
+    <MetadataFile FileName="dkcc.xsd" MetadataType="Schema" ID="c1eeb7c0-2181-4233-9592-76d67d73f664" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../../../../rep.oio.dk/ebxml/xml/schemas/dkcc/2005/03/15/dkcc.xsd" />
+    <MetadataFile FileName="DKCC_PostOfficeBoxIdentifier.xsd" MetadataType="Schema" ID="592150fe-1633-468d-8f0c-63f09114fcba" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../../../../rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/13/DKCC_PostOfficeBoxIdentifier.xsd" />
+    <MetadataFile FileName="DKCC_PersonGivenName.xsd" MetadataType="Schema" ID="9fa3f50f-5ff9-438d-97ae-c5fdb23feeba" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../../../../rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/DKCC_PersonGivenName.xsd" />
+    <MetadataFile FileName="DKCC_FloorIdentifier.xsd" MetadataType="Schema" ID="eb0b407e-1da3-43ed-a007-9aa46db066ab" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../../../../rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/DKCC_FloorIdentifier.xsd" />
+    <MetadataFile FileName="CPR_AuthorityCode.xsd" MetadataType="Schema" ID="536283bf-16ab-4e26-a074-783cb58bc5e8" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../../../../rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/CPR_AuthorityCode.xsd" />
+    <MetadataFile FileName="DKCC_SuiteIdentifier.xsd" MetadataType="Schema" ID="a18ed9c6-5cea-4f16-9031-d2689e37dcdb" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../../../../rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/DKCC_SuiteIdentifier.xsd" />
+    <MetadataFile FileName="XKOM_AddressSpecific.xsd" MetadataType="Schema" ID="9c625772-3c48-4bfc-9e65-44be4eeadadd" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../../../../rep.oio.dk/xkom.dk/xml/schemas/2006/01/06/XKOM_AddressSpecific.xsd" />
+    <MetadataFile FileName="BASIS_eFPIfejl.xsd" MetadataType="Schema" ID="9cbabbfa-a129-4c64-bc49-57c6254f5775" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../../../../basis/xml/schemas/2007/07/01/BASIS_eFPIfejl.xsd" />
+    <MetadataFile FileName="bbr.xsd" MetadataType="Schema" ID="124bbacb-8cd8-4faa-8799-b5708901ae5c" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../../../../rep.oio.dk/bbr.dk/xml/schemas/2005/03/11/bbr.xsd" />
+    <MetadataFile FileName="DKCC_StreetName.xsd" MetadataType="Schema" ID="e0d82c4a-b82f-44bc-be2f-778cfad5e40c" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../../../../rep.oio.dk/ebxml/xml/schemas/dkcc/2005/03/15/DKCC_StreetName.xsd" />
+    <MetadataFile FileName="DKCC_PersonSurnameName.xsd" MetadataType="Schema" ID="b2bbf326-fb1b-481f-b2a3-093835dc877b" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../../../../rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/DKCC_PersonSurnameName.xsd" />
+    <MetadataFile FileName="XKOM_AddressPostal.xsd" MetadataType="Schema" ID="602dce14-5c49-48e0-8604-9bb889df9115" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../../../../rep.oio.dk/xkom.dk/xml/schemas/2006/01/06/XKOM_AddressPostal.xsd" />
+    <MetadataFile FileName="PrisModel.wsdl" MetadataType="Wsdl" ID="8bda497d-1e31-4ad4-91ea-e0a3851ac989" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?wsdl=URS_PrisModel.URS.wsdl" />
+    <MetadataFile FileName="URS_PrisModel_v1.xsd" MetadataType="Schema" ID="15231c62-f0d9-475b-b59a-199bd78e7300" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../schemas/URS_PrisModel_v1.xsd" />
+    <MetadataFile FileName="BBR_RealPropertyIdentifier.xsd" MetadataType="Schema" ID="fceb2ea9-2019-425e-aa6e-17a6106b72e6" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../../../../rep.oio.dk/bbr.dk/xml/schemas/2005/03/11/BBR_RealPropertyIdentifier.xsd" />
+    <MetadataFile FileName="DKCC_CountryIdentificationCode.xsd" MetadataType="Schema" ID="781258b8-f719-4aed-b596-452ef3a80e85" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../../../../rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/DKCC_CountryIdentificationCode.xsd" />
+    <MetadataFile FileName="DKCC_DistrictSubdivisionIdentifier.xsd" MetadataType="Schema" ID="5caff254-163a-4a47-ac2e-c53e246310b7" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../../../../rep.oio.dk/ebxml/xml/schemas/dkcc/2005/03/15/DKCC_DistrictSubdivisionIdentifier.xsd" />
+    <MetadataFile FileName="CPR_MunicipalityCode.xsd" MetadataType="Schema" ID="a210785d-195a-41d0-88ae-409ccecc3ede" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../../../../rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/CPR_MunicipalityCode.xsd" />
+    <MetadataFile FileName="DKCC_DistrictName.xsd" MetadataType="Schema" ID="14539985-dc13-45b9-be98-9e0823db1751" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../../../../rep.oio.dk/ebxml/xml/schemas/dkcc/2005/03/15/DKCC_DistrictName.xsd" />
+    <MetadataFile FileName="DKCC_PersonMiddleName.xsd" MetadataType="Schema" ID="4e8bbe66-440e-4313-9533-e8252799f6a2" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../../../../rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/DKCC_PersonMiddleName.xsd" />
+    <MetadataFile FileName="xkom.xsd" MetadataType="Schema" ID="3da541ac-6547-4f5f-9718-270b7f79a1b5" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../../../../rep.oio.dk/xkom.dk/xml/schemas/2006/01/06/xkom.xsd" />
+    <MetadataFile FileName="CPR_PersonCivilRegistrationIdentifier.xsd" MetadataType="Schema" ID="eb08c8b9-d212-4ce4-9590-88f8339f12fd" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../../../../rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/CPR_PersonCivilRegistrationIdentifier.xsd" />
+    <MetadataFile FileName="XKOM_AddressComplete.xsd" MetadataType="Schema" ID="6ad9fea1-41ac-4ea7-85a9-b26aa0230dd6" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../../../../rep.oio.dk/xkom.dk/xml/schemas/2006/01/06/XKOM_AddressComplete.xsd" />
+    <MetadataFile FileName="XKOM_AddressAccess.xsd" MetadataType="Schema" ID="5ecd4b5b-da05-4e03-a03c-6461965ef2b4" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../../../../rep.oio.dk/xkom.dk/xml/schemas/2005/03/15/XKOM_AddressAccess.xsd" />
+    <MetadataFile FileName="dkcc1.xsd" MetadataType="Schema" ID="32494252-623f-470b-9131-733afec1de7c" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../../../../rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/dkcc.xsd" />
+    <MetadataFile FileName="BASIS_eFPIDetailsErrorType.xsd" MetadataType="Schema" ID="7077e3f7-927b-4ee5-b063-3ce5474184b7" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../../../../basis/xml/schemas/2007/07/01/BASIS_eFPIDetailsErrorType.xsd" />
+    <MetadataFile FileName="cpr.xsd" MetadataType="Schema" ID="3f58955b-1d59-48cb-8b66-39bfc4c5be28" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../../../../rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/cpr.xsd" />
+    <MetadataFile FileName="bbr1.xsd" MetadataType="Schema" ID="866bcd55-88f1-4d19-acb8-2c6c67eb6e78" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../../../../rep.oio.dk/bbr.dk/xml/schemas/2005/12/15/bbr.xsd" />
+    <MetadataFile FileName="BASIS_errorlocation.xsd" MetadataType="Schema" ID="cd9ffa93-31fb-4205-856e-d446c1377542" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../../../../basis/xml/schemas/2007/07/01/BASIS_errorlocation.xsd" />
+    <MetadataFile FileName="BBR_RealPropertyStructure.xsd" MetadataType="Schema" ID="4449497a-f45d-4fe6-ba54-4bc4c249c726" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../../../../rep.oio.dk/bbr.dk/xml/schemas/2005/12/15/BBR_RealPropertyStructure.xsd" />
+    <MetadataFile FileName="dkcc2.xsd" MetadataType="Schema" ID="ce56f3b5-f3d8-4e71-a452-9f2243ff3c7d" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../../../../rep.oio.dk/ebxml/xml/schemas/dkcc/2005/05/13/dkcc.xsd" />
+    <MetadataFile FileName="CPR_StreetCode.xsd" MetadataType="Schema" ID="551772dc-2533-44db-ab65-93326d886100" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../../../../rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/CPR_StreetCode.xsd" />
+    <MetadataFile FileName="DKCC_PostCodeIdentifier.xsd" MetadataType="Schema" ID="8094b9b0-f70d-4c46-851e-03dd5f9e39b9" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../../../../rep.oio.dk/ebxml/xml/schemas/dkcc/2005/03/15/DKCC_PostCodeIdentifier.xsd" />
+    <MetadataFile FileName="DKCC_StreetBuildingIdentifier.xsd" MetadataType="Schema" ID="07839bcc-250c-49db-8332-2b02b78c9fda" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../../../../rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/DKCC_StreetBuildingIdentifier.xsd" />
+    <MetadataFile FileName="EFPI_Strings_v1.xsd" MetadataType="Schema" ID="eed84d39-2fe3-4144-acd6-21eefba1365a" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../../../../efpi.dk/ehp2011/xml/schemas/EFPI_Strings_v1.xsd" />
+    <MetadataFile FileName="PrisModel1.wsdl" MetadataType="Wsdl" ID="5baa5a81-bcf5-4045-9f69-adfe76a3aa29" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?wsdl" />
+    <MetadataFile FileName="DKCC_BirthDate.xsd" MetadataType="Schema" ID="ef89ea1f-7ec5-4645-a053-d2cad3cc7534" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../../../../rep.oio.dk/ebxml/xml/schemas/dkcc/2005/03/15/DKCC_BirthDate.xsd" />
+    <MetadataFile FileName="BBR_MunicipalRealPropertyIdentifier.xsd" MetadataType="Schema" ID="4effe1f0-0204-4a9c-ac32-f92f1f229aab" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../../../../rep.oio.dk/bbr.dk/xml/schemas/2005/03/11/BBR_MunicipalRealPropertyIdentifier.xsd" />
+    <MetadataFile FileName="xkom1.xsd" MetadataType="Schema" ID="7cfca8ec-d261-440b-aa61-ac827e4f37a5" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../../../../rep.oio.dk/xkom.dk/xml/schemas/2005/03/15/xkom.xsd" />
+    <MetadataFile FileName="DKCC_MailDeliverySublocationIdentifier.xsd" MetadataType="Schema" ID="5cdedae4-308a-47d7-a96f-0cfbb6dfb0dd" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../../../../rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/DKCC_MailDeliverySublocationIdentifier.xsd" />
+    <MetadataFile FileName="CPR_StreetNameForAddressingName.xsd" MetadataType="Schema" ID="170ba739-40a4-4f71-9e37-0c3d9f3b6a98" SourceId="1" SourceUrl="https://test-e-vurderingspakke.e-nettet.dk/efpi/prismodel/PrisModel.URS?xsd=../../../../rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/CPR_StreetNameForAddressingName.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
