@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:ur1="http://enettet.dk/prismodel/xml/schemas/URS_PrisModel_v1" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:tns="http://service.enettet.dk/2015/01/05/" xmlns:jaxws="http://java.sun.com/xml/ns/jaxws" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" name="PrisModel.URS" targetNamespace="http://service.enettet.dk/2015/01/05/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:ur1="http://enettet.dk/prismodel/xml/schemas/URS_PrisModel_v1" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:tns="http://service.enettet.dk/2015/01/05/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" name="PrisModel.URS" targetNamespace="http://service.enettet.dk/2015/01/05/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema>
       <s:import schemaLocation="https://test-e-vurderingspakke.e-nettet.dk:443/efpi/prismodel/PrisModel.URS?xsd=../schemas/URS_PrisModel_v1.xsd" namespace="http://enettet.dk/prismodel/xml/schemas/URS_PrisModel_v1" />
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="FindesHaendelseResponse">
+    <wsdl:part name="body" element="ur1:FindesHaendelseResponse" />
+  </wsdl:message>
   <wsdl:message name="PrisModelHentResponse">
     <wsdl:part name="body" element="ur1:PrisModelHentResponse" />
   </wsdl:message>
@@ -16,6 +19,9 @@
   </wsdl:message>
   <wsdl:message name="PrisModelTilmeldResponse">
     <wsdl:part name="body" element="ur1:PrisModelTilmeldResponse" />
+  </wsdl:message>
+  <wsdl:message name="FindesHaendelse">
+    <wsdl:part name="body" element="ur1:FindesHaendelse" />
   </wsdl:message>
   <wsdl:message name="EFPIFault">
     <wsdl:part name="parameters" element="ur1:error" />
@@ -38,11 +44,13 @@
       <wsdl:fault name="EFPIFault" message="tns:EFPIFault" />
     </wsdl:operation>
     <wsdl:operation name="PrisModelHent">
-      <jaxws:bindings xmlns:jaxws="http://java.sun.com/xml/ns/jaxws">
-        <jaxws:enableWrapperStyle>false</jaxws:enableWrapperStyle>
-      </jaxws:bindings>
       <wsdl:input wsa:Action="http://service.enettet.dk/2015/01/05/PrisModel.URS/PrisModelHentRequest" message="tns:PrisModelHent" />
       <wsdl:output wsa:Action="http://service.enettet.dk/2015/01/05/PrisModel.URS/PrisModelHentResponse" message="tns:PrisModelHentResponse" />
+      <wsdl:fault name="EFPIFault" message="tns:EFPIFault" />
+    </wsdl:operation>
+    <wsdl:operation name="FindesHaendelse">
+      <wsdl:input wsa:Action="http://service.enettet.dk/2015/01/05/PrisModel.URS/FindesHaendelseRequest" message="tns:FindesHaendelse" />
+      <wsdl:output wsa:Action="http://service.enettet.dk/2015/01/05/PrisModel.URS/FindesHaendelseResponse" message="tns:FindesHaendelseResponse" />
       <wsdl:fault name="EFPIFault" message="tns:EFPIFault" />
     </wsdl:operation>
   </wsdl:portType>

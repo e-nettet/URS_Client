@@ -306,7 +306,67 @@ namespace URS_Client.ServiceReferenceEVurdering {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://enettet.dk/prismodel/xml/schemas/URS_PrisModel_v1")]
-    public partial class HaendelseIndsendResponseType : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class FindesHaendelseResponseType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private bool findesHaendelseField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public bool FindesHaendelse {
+            get {
+                return this.findesHaendelseField;
+            }
+            set {
+                this.findesHaendelseField = value;
+                this.RaisePropertyChanged("FindesHaendelse");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://enettet.dk/prismodel/xml/schemas/URS_PrisModel_v1")]
+    public partial class FindesHaendelseRequestType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string partIdField;
+        
+        private SagsnummerIdentifikatorType ejendomsmaeglerSagsnummerField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string PartId {
+            get {
+                return this.partIdField;
+            }
+            set {
+                this.partIdField = value;
+                this.RaisePropertyChanged("PartId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public SagsnummerIdentifikatorType EjendomsmaeglerSagsnummer {
+            get {
+                return this.ejendomsmaeglerSagsnummerField;
+            }
+            set {
+                this.ejendomsmaeglerSagsnummerField = value;
+                this.RaisePropertyChanged("EjendomsmaeglerSagsnummer");
+            }
+        }
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
@@ -356,9 +416,77 @@ namespace URS_Client.ServiceReferenceEVurdering {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://enettet.dk/prismodel/xml/schemas/URS_PrisModel_v1")]
+    public partial class HaendelseIndsendResponseType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://enettet.dk/prismodel/xml/schemas/URS_PrisModel_v1")]
+    public partial class AmetaInformationType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string partIdField;
+        
+        private SagsnummerIdentifikatorType ejendomsmaeglerSagsnummerField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string PartId {
+            get {
+                return this.partIdField;
+            }
+            set {
+                this.partIdField = value;
+                this.RaisePropertyChanged("PartId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public SagsnummerIdentifikatorType EjendomsmaeglerSagsnummer {
+            get {
+                return this.ejendomsmaeglerSagsnummerField;
+            }
+            set {
+                this.ejendomsmaeglerSagsnummerField = value;
+                this.RaisePropertyChanged("EjendomsmaeglerSagsnummer");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://enettet.dk/prismodel/xml/schemas/URS_PrisModel_v1")]
     public partial class HaendelseType : object, System.ComponentModel.INotifyPropertyChanged {
         
+        private AmetaInformationType ametaInformationField;
+        
         private HaendelsestypeType haendelsestypeField;
+        
+        private bool haendelsestypeFieldSpecified;
         
         private System.DateTime haendelseDatoField;
         
@@ -372,6 +500,18 @@ namespace URS_Client.ServiceReferenceEVurdering {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public AmetaInformationType AmetaInformation {
+            get {
+                return this.ametaInformationField;
+            }
+            set {
+                this.ametaInformationField = value;
+                this.RaisePropertyChanged("AmetaInformation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public HaendelsestypeType Haendelsestype {
             get {
                 return this.haendelsestypeField;
@@ -383,7 +523,19 @@ namespace URS_Client.ServiceReferenceEVurdering {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool HaendelsestypeSpecified {
+            get {
+                return this.haendelsestypeFieldSpecified;
+            }
+            set {
+                this.haendelsestypeFieldSpecified = value;
+                this.RaisePropertyChanged("HaendelsestypeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public System.DateTime HaendelseDato {
             get {
                 return this.haendelseDatoField;
@@ -395,7 +547,7 @@ namespace URS_Client.ServiceReferenceEVurdering {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://rep.oio.dk/bbr.dk/xml/schemas/2005/12/15/", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://rep.oio.dk/bbr.dk/xml/schemas/2005/12/15/", Order=3)]
         public RealPropertyStructureType RealPropertyStructure {
             get {
                 return this.realPropertyStructureField;
@@ -407,7 +559,7 @@ namespace URS_Client.ServiceReferenceEVurdering {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public EjendomstypeType EjendomsType {
             get {
                 return this.ejendomsTypeField;
@@ -419,7 +571,7 @@ namespace URS_Client.ServiceReferenceEVurdering {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public SagsnummerIdentifikatorType EjendomsmaeglerSagsnummer {
             get {
                 return this.ejendomsmaeglerSagsnummerField;
@@ -431,7 +583,7 @@ namespace URS_Client.ServiceReferenceEVurdering {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://rep.oio.dk/xkom.dk/xml/schemas/2006/01/06/", Order=5)]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://rep.oio.dk/xkom.dk/xml/schemas/2006/01/06/", Order=6)]
         public AddressPostalType AddressPostal {
             get {
                 return this.addressPostalField;
@@ -460,9 +612,6 @@ namespace URS_Client.ServiceReferenceEVurdering {
         
         /// <remarks/>
         SatTilSalg,
-        
-        /// <remarks/>
-        BolighandelAfsluttet,
     }
     
     /// <remarks/>
@@ -953,6 +1102,52 @@ namespace URS_Client.ServiceReferenceEVurdering {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rep.oio.dk/bbr.dk/xml/schemas/2005/03/11/")]
+    public partial class RealPropertyIdentifierType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string municipalityCodeField;
+        
+        private string municipalRealPropertyIdentifierField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/", Order=0)]
+        public string MunicipalityCode {
+            get {
+                return this.municipalityCodeField;
+            }
+            set {
+                this.municipalityCodeField = value;
+                this.RaisePropertyChanged("MunicipalityCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string MunicipalRealPropertyIdentifier {
+            get {
+                return this.municipalRealPropertyIdentifierField;
+            }
+            set {
+                this.municipalRealPropertyIdentifierField = value;
+                this.RaisePropertyChanged("MunicipalRealPropertyIdentifier");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://efpi.dk/basis/xml/schemas/2007/07/01/")]
     public partial class eFPIfejlType : object, System.ComponentModel.INotifyPropertyChanged {
         
@@ -1087,52 +1282,6 @@ namespace URS_Client.ServiceReferenceEVurdering {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://rep.oio.dk/bbr.dk/xml/schemas/2005/03/11/")]
-    public partial class RealPropertyIdentifierType : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string municipalityCodeField;
-        
-        private string municipalRealPropertyIdentifierField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/", Order=0)]
-        public string MunicipalityCode {
-            get {
-                return this.municipalityCodeField;
-            }
-            set {
-                this.municipalityCodeField = value;
-                this.RaisePropertyChanged("MunicipalityCode");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string MunicipalRealPropertyIdentifier {
-            get {
-                return this.municipalRealPropertyIdentifierField;
-            }
-            set {
-                this.municipalRealPropertyIdentifierField = value;
-                this.RaisePropertyChanged("MunicipalRealPropertyIdentifier");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://enettet.dk/prismodel/xml/schemas/URS_PrisModel_v1")]
     public partial class PrisModelTilmeldResponseType : object, System.ComponentModel.INotifyPropertyChanged {
         
@@ -1216,12 +1365,14 @@ namespace URS_Client.ServiceReferenceEVurdering {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PrisModelHentResponseType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PrisModelHentRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindesHaendelseResponseType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindesHaendelseRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HaendelseIndsendResponseType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HaendelseIndsendRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AddressCompleteType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RealPropertyIdentifierType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(eFPIfejlType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AddressSpecificType))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RealPropertyIdentifierType))]
         URS_Client.ServiceReferenceEVurdering.PrisModelTilmeldResponse PrisModelTilmeld(URS_Client.ServiceReferenceEVurdering.PrisModelTilmeldRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://service.enettet.dk/2015/01/05/PrisModel.URS/PrisModelTilmeldRequest", ReplyAction="*")]
@@ -1233,12 +1384,14 @@ namespace URS_Client.ServiceReferenceEVurdering {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PrisModelHentResponseType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PrisModelHentRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindesHaendelseResponseType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindesHaendelseRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HaendelseIndsendResponseType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HaendelseIndsendRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AddressCompleteType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RealPropertyIdentifierType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(eFPIfejlType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AddressSpecificType))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RealPropertyIdentifierType))]
         URS_Client.ServiceReferenceEVurdering.HaendelseIndsendResponse HaendelseIndsend(URS_Client.ServiceReferenceEVurdering.HaendelseIndsendRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://service.enettet.dk/2015/01/05/PrisModel.URS/HaendelseIndsendRequest", ReplyAction="*")]
@@ -1250,16 +1403,37 @@ namespace URS_Client.ServiceReferenceEVurdering {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PrisModelHentResponseType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PrisModelHentRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindesHaendelseResponseType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindesHaendelseRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HaendelseIndsendResponseType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HaendelseIndsendRequestType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AddressCompleteType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RealPropertyIdentifierType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(eFPIfejlType))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AddressSpecificType))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RealPropertyIdentifierType))]
         URS_Client.ServiceReferenceEVurdering.PrisModelHentResponse PrisModelHent(URS_Client.ServiceReferenceEVurdering.PrisModelHentRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://service.enettet.dk/2015/01/05/PrisModel.URS/PrisModelHentRequest", ReplyAction="*")]
         System.Threading.Tasks.Task<URS_Client.ServiceReferenceEVurdering.PrisModelHentResponse> PrisModelHentAsync(URS_Client.ServiceReferenceEVurdering.PrisModelHentRequest request);
+        
+        // CODEGEN: Generating message contract since the operation FindesHaendelse is neither RPC nor document wrapped.
+        [System.ServiceModel.OperationContractAttribute(Action="http://service.enettet.dk/2015/01/05/PrisModel.URS/FindesHaendelseRequest", ReplyAction="*")]
+        [System.ServiceModel.FaultContractAttribute(typeof(URS_Client.ServiceReferenceEVurdering.eFPIDetailsErrorType), Action="http://service.enettet.dk/2015/01/05/PrisModel.URS/FindesHaendelseRequest", Name="error", Namespace="http://enettet.dk/prismodel/xml/schemas/URS_PrisModel_v1")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PrisModelHentResponseType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PrisModelHentRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindesHaendelseResponseType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FindesHaendelseRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HaendelseIndsendResponseType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(HaendelseIndsendRequestType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AddressCompleteType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RealPropertyIdentifierType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(eFPIfejlType))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(AddressSpecificType))]
+        URS_Client.ServiceReferenceEVurdering.FindesHaendelseResponse FindesHaendelse(URS_Client.ServiceReferenceEVurdering.FindesHaendelseRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://service.enettet.dk/2015/01/05/PrisModel.URS/FindesHaendelseRequest", ReplyAction="*")]
+        System.Threading.Tasks.Task<URS_Client.ServiceReferenceEVurdering.FindesHaendelseResponse> FindesHaendelseAsync(URS_Client.ServiceReferenceEVurdering.FindesHaendelseRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1364,6 +1538,40 @@ namespace URS_Client.ServiceReferenceEVurdering {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class FindesHaendelseRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://enettet.dk/prismodel/xml/schemas/URS_PrisModel_v1", Order=0)]
+        public URS_Client.ServiceReferenceEVurdering.FindesHaendelseRequestType FindesHaendelse;
+        
+        public FindesHaendelseRequest() {
+        }
+        
+        public FindesHaendelseRequest(URS_Client.ServiceReferenceEVurdering.FindesHaendelseRequestType FindesHaendelse) {
+            this.FindesHaendelse = FindesHaendelse;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class FindesHaendelseResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="FindesHaendelseResponse", Namespace="http://enettet.dk/prismodel/xml/schemas/URS_PrisModel_v1", Order=0)]
+        public URS_Client.ServiceReferenceEVurdering.FindesHaendelseResponseType FindesHaendelseResponse1;
+        
+        public FindesHaendelseResponse() {
+        }
+        
+        public FindesHaendelseResponse(URS_Client.ServiceReferenceEVurdering.FindesHaendelseResponseType FindesHaendelseResponse1) {
+            this.FindesHaendelseResponse1 = FindesHaendelseResponse1;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface PrisModelURSChannel : URS_Client.ServiceReferenceEVurdering.PrisModelURS, System.ServiceModel.IClientChannel {
     }
@@ -1458,6 +1666,29 @@ namespace URS_Client.ServiceReferenceEVurdering {
             URS_Client.ServiceReferenceEVurdering.PrisModelHentRequest inValue = new URS_Client.ServiceReferenceEVurdering.PrisModelHentRequest();
             inValue.PrisModelHent = PrisModelHent;
             return ((URS_Client.ServiceReferenceEVurdering.PrisModelURS)(this)).PrisModelHentAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        URS_Client.ServiceReferenceEVurdering.FindesHaendelseResponse URS_Client.ServiceReferenceEVurdering.PrisModelURS.FindesHaendelse(URS_Client.ServiceReferenceEVurdering.FindesHaendelseRequest request) {
+            return base.Channel.FindesHaendelse(request);
+        }
+        
+        public URS_Client.ServiceReferenceEVurdering.FindesHaendelseResponseType FindesHaendelse(URS_Client.ServiceReferenceEVurdering.FindesHaendelseRequestType FindesHaendelse1) {
+            URS_Client.ServiceReferenceEVurdering.FindesHaendelseRequest inValue = new URS_Client.ServiceReferenceEVurdering.FindesHaendelseRequest();
+            inValue.FindesHaendelse = FindesHaendelse1;
+            URS_Client.ServiceReferenceEVurdering.FindesHaendelseResponse retVal = ((URS_Client.ServiceReferenceEVurdering.PrisModelURS)(this)).FindesHaendelse(inValue);
+            return retVal.FindesHaendelseResponse1;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<URS_Client.ServiceReferenceEVurdering.FindesHaendelseResponse> URS_Client.ServiceReferenceEVurdering.PrisModelURS.FindesHaendelseAsync(URS_Client.ServiceReferenceEVurdering.FindesHaendelseRequest request) {
+            return base.Channel.FindesHaendelseAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<URS_Client.ServiceReferenceEVurdering.FindesHaendelseResponse> FindesHaendelseAsync(URS_Client.ServiceReferenceEVurdering.FindesHaendelseRequestType FindesHaendelse) {
+            URS_Client.ServiceReferenceEVurdering.FindesHaendelseRequest inValue = new URS_Client.ServiceReferenceEVurdering.FindesHaendelseRequest();
+            inValue.FindesHaendelse = FindesHaendelse;
+            return ((URS_Client.ServiceReferenceEVurdering.PrisModelURS)(this)).FindesHaendelseAsync(inValue);
         }
     }
 }

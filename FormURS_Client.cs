@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Windows.Forms;
 using URS_Client.ServiceReferenceTBIS;
 using URS_Client.ServiceReferenceEVurdering;
@@ -8,22 +7,25 @@ using URS_Client.ServiceReferenceEVurdering;
 namespace URS_Client
 {
     public enum Miljoe { Test, Produktion}
-    public enum Function { TilmeldPrismodel, HaendelseIndsend }
     public partial class FormIndsend : Form
     {
         private ValidatePartyResponse validatePartyResponse;
-
         private string partyID;
         private string password;
         private Miljoe miljoe;
-        private ServiceReferenceEVurdering.HaendelseType haendelseType;
+        private HaendelseType haendelseType;
         public int systemleverandoerid;
+
+        private URS_Utils uRS_Utils;
 
         public FormIndsend()
         {
             InitializeComponent();
             this.Text = this.ProductName + " (version " + this.ProductVersion + ")";
             System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
+            haendelseType = new HaendelseType() { Haendelsestype = HaendelsestypeType.SatTilSalg };
+            userControlAmeta1.HaendelseType = haendelseType;
+            userControlUdbud1.HaendelseType = haendelseType;
             EnableButtons(true);
         }
 
@@ -66,7 +68,12 @@ namespace URS_Client
                         break;
                     }
 
-                case 1: // Udbudshændelse registreret
+                case 1: // Ameta oplysninger registreret
+                    {
+                        if (!backgroundWorkerAmeta.IsBusy) { backgroundWorkerAmeta.RunWorkerAsync(); }
+                        break;
+                    }
+                case 2: // Udbudshændelse registreret
                     {
                         try
                         {
@@ -78,7 +85,6 @@ namespace URS_Client
                             SetMessage(f.Message);
                             EnableButtons(true);
                         }
-
                         break;
                     }
                 default: break;
@@ -108,7 +114,7 @@ namespace URS_Client
             backgroundWorkerSendUdbudshaendelse.ReportProgress(0, "Sender udbudshændelse");
             try
             {
-                HaendelseIndsendResponseType response = URS_Utils.HaendelseIndsend(miljoe, partyID, password, haendelseType, systemleverandoerid);
+                HaendelseIndsendResponseType response = uRS_Utils.HaendelseIndsend(haendelseType);
                 backgroundWorkerSendUdbudshaendelse.ReportProgress(0, "OK");
             }
             catch (Exception f){ backgroundWorkerSendUdbudshaendelse.ReportProgress(0, "Fejl ved send af udbudshændelse: " + f.Message); }
@@ -123,6 +129,30 @@ namespace URS_Client
         {
             wizardTabcontrol1.SelectedIndex += 1;
             EnableButtons(true);
+        }
+
+        private void backgroundWorkerValidateParty_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if (validatePartyResponse.backEndStatusCode == 0)
+            {
+                uRS_Utils = new URS_Utils(miljoe, partyID, password, systemleverandoerid);
+                wizardTabcontrol1.SelectedIndex += 1;
+            }
+            EnableButtons(true);
+        }
+
+        private void backgroundWorkerAmeta_DoWork(object sender, DoWorkEventArgs e)
+        {
+            backgroundWorkerSendUdbudshaendelse.ReportProgress(0, "Finder ametasag...");
+            try
+            {
+                if (uRS_Utils.FindesHaendelse(haendelseType.AmetaInformation.EjendomsmaeglerSagsnummer.Value, haendelseType.AmetaInformation.PartId))
+                {
+                    backgroundWorkerSendUdbudshaendelse.ReportProgress(0, "Ametasag findes");
+                }
+                else { backgroundWorkerSendUdbudshaendelse.ReportProgress(0, "Ametasag findes ikke"); }
+            }
+            catch (Exception f) { backgroundWorkerSendUdbudshaendelse.ReportProgress(0, "Fejl ved find ametasag: " + f.Message); }
         }
     }
 }

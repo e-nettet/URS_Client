@@ -11,6 +11,22 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>G:\nn\URS_Client\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -30,6 +46,18 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>D06D346F51FF1AAD5E3F92F900C4C8515E838860</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>URS_Client_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -72,6 +100,12 @@
     <Compile Include="RESTUtils.cs" />
     <Compile Include="RKNet_Utils.cs" />
     <Compile Include="URS_Utils.cs" />
+    <Compile Include="UserControlAmeta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlAmeta.Designer.cs">
+      <DependentUpon>UserControlAmeta.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlLogon.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -100,6 +134,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControlAmeta.resx">
+      <DependentUpon>UserControlAmeta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlLogon.resx">
       <DependentUpon>UserControlLogon.cs</DependentUpon>
     </EmbeddedResource>
@@ -207,6 +244,12 @@
     </None>
     <None Include="Connected Services\ServiceReferenceEVurdering\PrisModel.wsdl" />
     <None Include="Connected Services\ServiceReferenceEVurdering\PrisModel1.wsdl" />
+    <None Include="Connected Services\ServiceReferenceEVurdering\URS_Client.ServiceReferenceEVurdering.FindesHaendelseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReferenceEVurdering\URS_Client.ServiceReferenceEVurdering.FindesHaendelseResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReferenceEVurdering\URS_Client.ServiceReferenceEVurdering.HaendelseIndsendResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -301,6 +344,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="URS_Client_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -315,18 +359,6 @@
     <WCFMetadataStorage Include="Connected Services\ServiceReferenceTBIS\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceReferenceEVurdering\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceReferenceEVurdering\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceReferenceEVurdering\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Connected Services\ServiceReferenceTBIS\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
@@ -334,6 +366,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\ServiceReferenceTBIS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReferenceEVurdering\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReferenceEVurdering\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReferenceEVurdering\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

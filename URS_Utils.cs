@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using URS_Client.ServiceReferenceEVurdering;
 
 namespace URS_Client
@@ -11,20 +8,16 @@ namespace URS_Client
     {
         private Miljoe miljoe;
         private string afsender_partid;
-        private string modtager_partid;
-        private string jnummer;
-
-        public Miljoe Miljoe { get => miljoe; set => miljoe = value; }
-        public string Afsender_partid { get => afsender_partid; set => afsender_partid = value; }
-        public string Jnummer { get => jnummer; set => jnummer = value; }
-        public string Modtager_partid { get => modtager_partid; set => modtager_partid = value; }
+        private int systemleverandoerNummer;
+        private PrisModelURSClient client;
 
 
-        public URS_Utils(Miljoe miljoe, string afsender_partid, string jnummer)
+        public URS_Utils(Miljoe miljoe, string afsender_partid, string password, int systemleverandoerNummer)
         {
-            this.Miljoe = miljoe;
-            this.Afsender_partid = afsender_partid;
-            this.Jnummer = jnummer;
+            this.miljoe = miljoe;
+            this.afsender_partid = afsender_partid;
+            this.systemleverandoerNummer = systemleverandoerNummer;
+            client = ClientFactoryURS.GetPrisModelURSClient(miljoe, afsender_partid, password, GetEndpointAddress(miljoe));
         }
 
         public static string GetEndpointAddress(Miljoe miljoe)
@@ -45,12 +38,12 @@ namespace URS_Client
             return (s);
         }
 
-        public static PrisModelTilmeldResponseType PrismodelTilmeld(Miljoe miljoe, string partyID, string password, PrisModelType prismodel, int systemleverandoerNummer) 
+        public PrisModelTilmeldResponseType PrismodelTilmeld(PrisModelType prismodel) 
         {
-            PrisModelURSClient client = ClientFactoryURS.GetPrisModelURSClient(miljoe, partyID, password, GetEndpointAddress(miljoe));
+            
             PrisModelTilmeldRequestType request = new PrisModelTilmeldRequestType
             {
-                PartId = partyID,
+                PartId = afsender_partid,
                 SystemleverandoerNummer = systemleverandoerNummer,
                 PrisModel = prismodel
             };
@@ -59,18 +52,28 @@ namespace URS_Client
             return (response);
         }
 
-        public static HaendelseIndsendResponseType HaendelseIndsend(Miljoe miljoe, string partyID, string password, HaendelseType haendelseType, int systemleverandoerNummer) 
+        public HaendelseIndsendResponseType HaendelseIndsend(HaendelseType haendelseType) 
         {
-            PrisModelURSClient client = ClientFactoryURS.GetPrisModelURSClient(miljoe, partyID, password, GetEndpointAddress(miljoe));
             HaendelseIndsendRequestType request = new HaendelseIndsendRequestType
             {
                 Haendelse = haendelseType,
-                PartId = partyID,
+                PartId = afsender_partid,
                 SystemleverandoerNummer = systemleverandoerNummer
             };
 
             HaendelseIndsendResponseType response = client.HaendelseIndsend(request);
             return (response);
+        }
+
+        public bool FindesHaendelse(string sagsnummer, string partID)
+        {
+            FindesHaendelseRequestType request = new FindesHaendelseRequestType()
+            {
+                EjendomsmaeglerSagsnummer = new SagsnummerIdentifikatorType() { Value = sagsnummer },
+                PartId = partID
+            };
+            FindesHaendelseResponseType response = client.FindesHaendelse(request);
+            return (response.FindesHaendelse);
         }
 
         public static AddressPostalType GetAddressPostalType(string kommunekode, string ejendomsnummer) 
@@ -95,13 +98,12 @@ namespace URS_Client
 
             return (a);
         }
-        public static PrisModelHentResponseType GetPrisModelHentResponseType(Miljoe miljoe, string partyID, string password, DateTime dato) 
+        public PrisModelHentResponseType GetPrisModelHentResponseType(DateTime dato) 
         {
-           PrisModelURSClient client = ClientFactoryURS.GetPrisModelURSClient(miljoe, partyID, password, GetEndpointAddress(miljoe));
             PrisModelHentRequestType request = new PrisModelHentRequestType
             {
                 Dato = dato,
-                PartId = partyID
+                PartId = afsender_partid
             };
             PrisModelHentResponseType response = client.PrisModelHent(request);
            return (response);

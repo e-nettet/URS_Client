@@ -40,10 +40,14 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.userControlUdbud1 = new URS_Client.UserControlUdbud();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPageAmeta = new System.Windows.Forms.TabPage();
+            this.userControlAmeta1 = new URS_Client.UserControlAmeta();
+            this.backgroundWorkerAmeta = new System.ComponentModel.BackgroundWorker();
             this.statusStrip1.SuspendLayout();
             this.wizardTabcontrol1.SuspendLayout();
             this.tabPageLogin.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPageAmeta.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -51,9 +55,9 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 283);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 297);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(602, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(665, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -66,7 +70,7 @@
             // buttonNext
             // 
             this.buttonNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonNext.Location = new System.Drawing.Point(519, 259);
+            this.buttonNext.Location = new System.Drawing.Point(582, 273);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(75, 23);
             this.buttonNext.TabIndex = 1;
@@ -77,7 +81,7 @@
             // buttonTilbage
             // 
             this.buttonTilbage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonTilbage.Location = new System.Drawing.Point(439, 259);
+            this.buttonTilbage.Location = new System.Drawing.Point(502, 273);
             this.buttonTilbage.Name = "buttonTilbage";
             this.buttonTilbage.Size = new System.Drawing.Size(75, 23);
             this.buttonTilbage.TabIndex = 0;
@@ -90,7 +94,7 @@
             this.backgroundWorkerValidateParty.WorkerReportsProgress = true;
             this.backgroundWorkerValidateParty.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorkerValidateParty_DoWork);
             this.backgroundWorkerValidateParty.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BackgroundWorker_ProgressChanged);
-            this.backgroundWorkerValidateParty.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BackgroundWorker_RunWorkerCompleted);
+            this.backgroundWorkerValidateParty.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorkerValidateParty_RunWorkerCompleted);
             // 
             // backgroundWorkerSendUdbudshaendelse
             // 
@@ -105,12 +109,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.wizardTabcontrol1.Controls.Add(this.tabPageLogin);
+            this.wizardTabcontrol1.Controls.Add(this.tabPageAmeta);
             this.wizardTabcontrol1.Controls.Add(this.tabPage1);
             this.wizardTabcontrol1.Controls.Add(this.tabPage2);
             this.wizardTabcontrol1.Location = new System.Drawing.Point(15, 12);
             this.wizardTabcontrol1.Name = "wizardTabcontrol1";
             this.wizardTabcontrol1.SelectedIndex = 0;
-            this.wizardTabcontrol1.Size = new System.Drawing.Size(578, 239);
+            this.wizardTabcontrol1.Size = new System.Drawing.Size(641, 253);
             this.wizardTabcontrol1.TabIndex = 1;
             // 
             // tabPageLogin
@@ -175,11 +180,41 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // tabPageAmeta
+            // 
+            this.tabPageAmeta.Controls.Add(this.userControlAmeta1);
+            this.tabPageAmeta.Location = new System.Drawing.Point(4, 22);
+            this.tabPageAmeta.Name = "tabPageAmeta";
+            this.tabPageAmeta.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageAmeta.Size = new System.Drawing.Size(633, 227);
+            this.tabPageAmeta.TabIndex = 7;
+            this.tabPageAmeta.Text = "tabPage3";
+            this.tabPageAmeta.UseVisualStyleBackColor = true;
+            // 
+            // userControlAmeta1
+            // 
+            this.userControlAmeta1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.userControlAmeta1.AutoSize = true;
+            this.userControlAmeta1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.userControlAmeta1.Location = new System.Drawing.Point(7, 7);
+            this.userControlAmeta1.Name = "userControlAmeta1";
+            this.userControlAmeta1.Size = new System.Drawing.Size(620, 217);
+            this.userControlAmeta1.TabIndex = 0;
+            // 
+            // backgroundWorkerAmeta
+            // 
+            this.backgroundWorkerAmeta.WorkerReportsProgress = true;
+            this.backgroundWorkerAmeta.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerAmeta_DoWork);
+            this.backgroundWorkerAmeta.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BackgroundWorker_ProgressChanged);
+            this.backgroundWorkerAmeta.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BackgroundWorker_RunWorkerCompleted);
+            // 
             // FormIndsend
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(602, 305);
+            this.ClientSize = new System.Drawing.Size(665, 319);
             this.Controls.Add(this.buttonTilbage);
             this.Controls.Add(this.buttonNext);
             this.Controls.Add(this.wizardTabcontrol1);
@@ -192,6 +227,8 @@
             this.tabPageLogin.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPageAmeta.ResumeLayout(false);
+            this.tabPageAmeta.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,6 +247,9 @@
         private WizardTabcontrol wizardTabcontrol1;
         private UserControlUdbud userControlUdbud1;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPageAmeta;
+        private UserControlAmeta userControlAmeta1;
+        private System.ComponentModel.BackgroundWorker backgroundWorkerAmeta;
     }
 }
 

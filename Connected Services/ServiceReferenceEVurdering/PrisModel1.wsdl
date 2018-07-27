@@ -62,6 +62,19 @@
         <soap12:fault use="literal" name="EFPIFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
+    <wsdl:operation name="FindesHaendelse">
+      <soap12:operation soapAction="http://service.enettet.dk/2015/01/05/PrisModel.URS/FindesHaendelseRequest" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#UsernameToken" />
+        <soap12:body use="literal" parts="body" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" parts="body" />
+      </wsdl:output>
+      <wsdl:fault name="EFPIFault">
+        <soap12:fault use="literal" name="EFPIFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="PrisModel.URS">
     <wsdl:port name="PrisModel.URS.UsernameToken" binding="tns:PrisModel.URS.UsernameToken" />

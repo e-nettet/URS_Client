@@ -11,6 +11,8 @@
   <element name="HaendelseIndsendResponse" type="tns:HaendelseIndsendResponseType" />
   <element name="PrisModelHent" type="tns:PrisModelHentRequestType" />
   <element name="PrisModelHentResponse" type="tns:PrisModelHentResponseType" />
+  <element name="FindesHaendelse" type="tns:FindesHaendelseRequestType" />
+  <element name="FindesHaendelseResponse" type="tns:FindesHaendelseResponseType" />
   <element name="error" type="basis:eFPIDetailsErrorType" />
   <complexType name="PrisModelTilmeldRequestType">
     <sequence>
@@ -31,6 +33,17 @@
   </complexType>
   <complexType name="HaendelseIndsendResponseType">
     <sequence />
+  </complexType>
+  <complexType name="FindesHaendelseRequestType">
+    <sequence>
+      <element name="PartId" type="string" />
+      <element name="EjendomsmaeglerSagsnummer" type="sagsnummeridentifikator:SagsnummerIdentifikatorType" />
+    </sequence>
+  </complexType>
+  <complexType name="FindesHaendelseResponseType">
+    <sequence>
+      <element name="FindesHaendelse" type="boolean" />
+    </sequence>
   </complexType>
   <complexType name="PrisModelHentRequestType">
     <sequence>
@@ -56,12 +69,19 @@
   </complexType>
   <complexType name="HaendelseType">
     <sequence>
-      <element name="Haendelsestype" type="tns:HaendelsestypeType" />
+      <element minOccurs="0" name="AmetaInformation" type="tns:AmetaInformationType" />
+      <element minOccurs="0" name="Haendelsestype" type="tns:HaendelsestypeType" />
       <element name="HaendelseDato" type="dateTime" />
       <element ref="bbr:RealPropertyStructure" />
       <element name="EjendomsType" type="tns:EjendomstypeType" />
       <element name="EjendomsmaeglerSagsnummer" type="sagsnummeridentifikator:SagsnummerIdentifikatorType" />
       <element ref="xkom:AddressPostal" />
+    </sequence>
+  </complexType>
+  <complexType name="AmetaInformationType">
+    <sequence>
+      <element name="PartId" type="string" />
+      <element name="EjendomsmaeglerSagsnummer" type="sagsnummeridentifikator:SagsnummerIdentifikatorType" />
     </sequence>
   </complexType>
   <simpleType name="PrisModelType">
@@ -87,7 +107,6 @@
   <simpleType name="HaendelsestypeType">
     <restriction base="string">
       <enumeration value="SatTilSalg" />
-      <enumeration value="BolighandelAfsluttet" />
     </restriction>
   </simpleType>
 </schema>
