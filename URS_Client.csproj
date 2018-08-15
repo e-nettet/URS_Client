@@ -12,7 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>G:\nn\URS_Client\</PublishUrl>
+    <PublishUrl>G:\arkiv\Prismodel 2015\URS_Client\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -22,7 +22,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -112,6 +112,12 @@
     <Compile Include="UserControlLogon.designer.cs">
       <DependentUpon>UserControlLogon.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlPrismodel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlPrismodel.Designer.cs">
+      <DependentUpon>UserControlPrismodel.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlUdbud.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -139,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlLogon.resx">
       <DependentUpon>UserControlLogon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlPrismodel.resx">
+      <DependentUpon>UserControlPrismodel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlUdbud.resx">
       <DependentUpon>UserControlUdbud.cs</DependentUpon>

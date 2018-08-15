@@ -12,14 +12,9 @@ namespace URS_Client
 
         //public void SetHaendelseType(ref HaendelseType haendelse) { this.haendelseType = haendelse; }
 
-        public HaendelseType HaendelseType
+        public void SetHaendelseType(ref HaendelseType haendelseType)
         {
-            get { return haendelseType; }
-            set
-            {
-                haendelseType = value;
-                SetComponents();
-            }
+            this.haendelseType = haendelseType;
         }
 
         public UserControlAmeta()

@@ -9,19 +9,7 @@ namespace URS_Client
         private HaendelseType haendelseType;
         private Kommune[] kommuner;
 
-        public HaendelseType HaendelseType
-        {
-            get
-            {
-                haendelseType.AddressPostal = URS_Utils.GetAddressPostalType(
-                    haendelseType.RealPropertyStructure.MunicipalityCode, 
-                    haendelseType.RealPropertyStructure.MunicipalRealPropertyIdentifier);
-                return (haendelseType);
-            }
-            set
-            {
-                haendelseType = value; } 
-        }
+        public void SetHaendelsesType(ref HaendelseType haendelseType) { this.haendelseType = haendelseType; }
 
         public UserControlUdbud()
         {
@@ -56,16 +44,43 @@ namespace URS_Client
 
         private void textBoxEjendomsnummer_TextChanged(object sender, EventArgs e)
         {
-            if (haendelseType.RealPropertyStructure == null) { haendelseType.RealPropertyStructure = new RealPropertyStructureType(); }
-            string s = ("000000" + textBoxEjendomsnummer.Text); // Formatet skal være 6 karakterer, så man tilføjer foranstilleder nuller
-            s = s.Substring(s.Length - 6, 6);
-            haendelseType.RealPropertyStructure.MunicipalRealPropertyIdentifier = s;
+            SetRealPropertyStructure();
         }
 
         private void comboBoxKommune_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (haendelseType.RealPropertyStructure == null) { haendelseType.RealPropertyStructure = new RealPropertyStructureType(); }
-            haendelseType.RealPropertyStructure.MunicipalityCode = kommuner[comboBoxKommune.SelectedIndex].kode;
+            SetRealPropertyStructure();
+        }
+
+        private void SetRealPropertyStructure()
+        {
+            string s = ("000000" + textBoxEjendomsnummer.Text); // Formatet skal være 6 karakterer, så man tilføjer foranstilleder nuller
+            s = s.Substring(s.Length - 6, 6);
+
+            haendelseType.RealPropertyStructure = new RealPropertyStructureType()
+            {
+                MunicipalityCode = kommuner[comboBoxKommune.SelectedIndex].kode,
+                   MunicipalRealPropertyIdentifier = s
+            };
+
+            try
+            {
+                haendelseType.AddressPostal = URS_Utils.GetAddressPostalType(
+                haendelseType.RealPropertyStructure.MunicipalityCode,
+                haendelseType.RealPropertyStructure.MunicipalRealPropertyIdentifier);
+                richTextBox1.Text =  GetPrettyAddressPostal(haendelseType.AddressPostal);
+            }
+            catch (Exception e) { richTextBox1.Text = "Ingen adresse fundet"; }
+        }
+        private string GetPrettyAddressPostal(AddressPostalType addressPostalType)
+        {
+            string s = "";
+            s += addressPostalType.StreetName + " " + addressPostalType.StreetBuildingIdentifier;
+            if (addressPostalType.FloorIdentifier != null) { s += ", " + addressPostalType.FloorIdentifier; }
+            if (addressPostalType.SuiteIdentifier != null) { s += addressPostalType.SuiteIdentifier; }
+            if (addressPostalType.DistrictSubdivisionIdentifier != null) { s += ", " + addressPostalType.DistrictSubdivisionIdentifier; }
+            s += ", " + addressPostalType.PostCodeIdentifier + "  " + addressPostalType.DistrictName;
+            return (s);
         }
     }
 }

@@ -1,0 +1,35 @@
+
+bin/Debug/URS_Client.application
+*.exe
+bin/Debug/URS_Client.exe.config
+bin/Debug/URS_Client.exe.manifest
+bin/Debug/URS_Client.pdb
+bin/Debug/app.publish/Application Files/URS_Client_1_0_0_3/URS_Client.exe.config.deploy
+bin/Debug/app.publish/Application Files/URS_Client_1_0_0_3/URS_Client.exe.deploy
+bin/Debug/app.publish/Application Files/URS_Client_1_0_0_3/URS_Client.exe.manifest
+bin/Debug/app.publish/URS_Client.application
+obj/Debug/DesignTimeResolveAssemblyReferences.cache
+obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
+obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs
+obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs
+obj/Debug/TempPE/Connected Services.ServiceReference.Reference.cs.dll
+obj/Debug/TempPE/Connected Services.ServiceReferenceEVurdering.Reference.cs.dll
+obj/Debug/TempPE/Connected Services.ServiceReferenceTBIS.Reference.cs.dll
+obj/Debug/URS_Client.application
+obj/Debug/URS_Client.csproj.CoreCompileInputs.cache
+obj/Debug/URS_Client.csproj.FileListAbsolute.txt
+obj/Debug/URS_Client.csproj.GenerateResource.cache
+obj/Debug/URS_Client.csprojAssemblyReference.cache
+obj/Debug/URS_Client.exe.manifest
+obj/Debug/URS_Client.FormURS_Client.resources
+obj/Debug/URS_Client.pdb
+obj/Debug/URS_Client.Properties.Resources.resources
+obj/Debug/URS_Client.UserControlAmeta.resources
+obj/Debug/URS_Client.UserControlLogon.resources
+obj/Debug/URS_Client.UserControlPrismodel.resources
+obj/Debug/URS_Client.UserControlUdbud.resources
+*.ide
+*.lock
+*.ide-wal
+*.ide-shm

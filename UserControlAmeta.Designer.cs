@@ -43,7 +43,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxAmetaSagsnummer.Enabled = false;
-            this.textBoxAmetaSagsnummer.Location = new System.Drawing.Point(313, 54);
+            this.textBoxAmetaSagsnummer.Location = new System.Drawing.Point(313, 52);
             this.textBoxAmetaSagsnummer.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxAmetaSagsnummer.Name = "textBoxAmetaSagsnummer";
             this.textBoxAmetaSagsnummer.Size = new System.Drawing.Size(308, 20);
@@ -53,7 +53,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(2, 52);
+            this.label6.Location = new System.Drawing.Point(2, 50);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(98, 13);
@@ -66,7 +66,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxAmteaEjendomsmaegler.Enabled = false;
-            this.textBoxAmteaEjendomsmaegler.Location = new System.Drawing.Point(313, 28);
+            this.textBoxAmteaEjendomsmaegler.Location = new System.Drawing.Point(313, 27);
             this.textBoxAmteaEjendomsmaegler.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxAmteaEjendomsmaegler.Name = "textBoxAmteaEjendomsmaegler";
             this.textBoxAmteaEjendomsmaegler.Size = new System.Drawing.Size(308, 20);
@@ -76,7 +76,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(2, 26);
+            this.label4.Location = new System.Drawing.Point(2, 25);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(118, 13);
@@ -112,10 +112,10 @@
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(623, 349);
             this.tableLayoutPanel1.TabIndex = 1;
             // 

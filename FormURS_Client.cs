@@ -10,6 +10,7 @@ namespace URS_Client
     public partial class FormIndsend : Form
     {
         private ValidatePartyResponse validatePartyResponse;
+        private PrisModelHentResponseType prisModelHentResponseType;
         private string partyID;
         private string password;
         private Miljoe miljoe;
@@ -24,8 +25,8 @@ namespace URS_Client
             this.Text = this.ProductName + " (version " + this.ProductVersion + ")";
             System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
             haendelseType = new HaendelseType() { Haendelsestype = HaendelsestypeType.SatTilSalg };
-            userControlAmeta1.HaendelseType = haendelseType;
-            userControlUdbud1.HaendelseType = haendelseType;
+            userControlAmeta1.SetHaendelseType(ref haendelseType);
+            userControlUdbud1.SetHaendelsesType(ref haendelseType);
             EnableButtons(true);
         }
 
@@ -34,7 +35,6 @@ namespace URS_Client
             partyID = userControlLogon1.PartID;
             password = userControlLogon1.Password;
             miljoe = userControlLogon1.Miljoe;
-            systemleverandoerid = userControlLogon1.SystemleverandoerID;
         }
 
         private void EnableButtons(Boolean enable)
@@ -67,17 +67,21 @@ namespace URS_Client
                         if (!backgroundWorkerValidateParty.IsBusy) { backgroundWorkerValidateParty.RunWorkerAsync(); }
                         break;
                     }
+                case 1: // Prismodel oplysninger
+                    {
+                        if (!backgroundWorkerPrismodel.IsBusy) { backgroundWorkerPrismodel.RunWorkerAsync(); } 
+                        break;
+                    }
 
-                case 1: // Ameta oplysninger registreret
+                case 2: // Ameta oplysninger registreret
                     {
                         if (!backgroundWorkerAmeta.IsBusy) { backgroundWorkerAmeta.RunWorkerAsync(); }
                         break;
                     }
-                case 2: // Udbudshændelse registreret
+                case 3: // Udbudshændelse registreret
                     {
                         try
                         {
-                            haendelseType = userControlUdbud1.HaendelseType;
                             if (!backgroundWorkerSendUdbudshaendelse.IsBusy) { backgroundWorkerSendUdbudshaendelse.RunWorkerAsync(); }
                         }
                         catch (Exception f)
@@ -107,6 +111,12 @@ namespace URS_Client
                 backgroundWorkerValidateParty.ReportProgress(0, "Partid og password valideret: " + validatePartyResponse.backEndStatusCode + " " + validatePartyResponse.backEndStatusText);
             }
             catch (Exception f) { backgroundWorkerValidateParty.ReportProgress(0, f.Message); }
+
+            // Henter også prismodel fra URS
+            uRS_Utils = new URS_Utils(miljoe, partyID, password, systemleverandoerid);
+            try { prisModelHentResponseType = uRS_Utils.GetPrisModelHentResponseType(DateTime.Now); }
+            catch (Exception g) { backgroundWorkerValidateParty.ReportProgress(0, g.Message); }
+
         }
 
         private void backgroundWorkerSendUdbudshaendelse_DoWork(object sender, DoWorkEventArgs e)
@@ -115,7 +125,7 @@ namespace URS_Client
             try
             {
                 HaendelseIndsendResponseType response = uRS_Utils.HaendelseIndsend(haendelseType);
-                backgroundWorkerSendUdbudshaendelse.ReportProgress(0, "OK");
+                backgroundWorkerSendUdbudshaendelse.ReportProgress(0, "Udbudshændelse sendt");
             }
             catch (Exception f){ backgroundWorkerSendUdbudshaendelse.ReportProgress(0, "Fejl ved send af udbudshændelse: " + f.Message); }
         }
@@ -135,7 +145,8 @@ namespace URS_Client
         {
             if (validatePartyResponse.backEndStatusCode == 0)
             {
-                uRS_Utils = new URS_Utils(miljoe, partyID, password, systemleverandoerid);
+                userControlPrismodel1.SetValidatePartyResponse(ref validatePartyResponse);
+                userControlPrismodel1.SetPrisModelHentResponseType(ref prisModelHentResponseType);
                 wizardTabcontrol1.SelectedIndex += 1;
             }
             EnableButtons(true);
@@ -143,16 +154,48 @@ namespace URS_Client
 
         private void backgroundWorkerAmeta_DoWork(object sender, DoWorkEventArgs e)
         {
-            backgroundWorkerSendUdbudshaendelse.ReportProgress(0, "Finder ametasag...");
-            try
+            if (userControlAmeta1.IsAmeta)
             {
-                if (uRS_Utils.FindesHaendelse(haendelseType.AmetaInformation.EjendomsmaeglerSagsnummer.Value, haendelseType.AmetaInformation.PartId))
+                backgroundWorkerAmeta.ReportProgress(0, "Finder ametasag...");
+                try
                 {
-                    backgroundWorkerSendUdbudshaendelse.ReportProgress(0, "Ametasag findes");
+                    if (uRS_Utils.FindesHaendelse(haendelseType.AmetaInformation.EjendomsmaeglerSagsnummer.Value, haendelseType.AmetaInformation.PartId))
+                    {
+                        backgroundWorkerAmeta.ReportProgress(0, "Ametasag findes");
+                    }
+                    else { backgroundWorkerAmeta.ReportProgress(0, "Ametasag findes ikke"); }
                 }
-                else { backgroundWorkerSendUdbudshaendelse.ReportProgress(0, "Ametasag findes ikke"); }
+                catch (Exception f) { backgroundWorkerAmeta.ReportProgress(0, "Fejl ved find ametasag: " + f.Message); }
             }
-            catch (Exception f) { backgroundWorkerSendUdbudshaendelse.ReportProgress(0, "Fejl ved find ametasag: " + f.Message); }
         }
+
+        private void wizardTabcontrol1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (wizardTabcontrol1.SelectedIndex)
+            {
+                case 1:
+                    {
+                        userControlPrismodel1.SetComponents();
+                        break;
+                    }
+                default:break;
+            }
+        }
+
+        private void backgroundWorkerPrismodel_DoWork(object sender, DoWorkEventArgs e)
+        {
+            if (userControlPrismodel1.SkiftPrismodel())
+            {
+                PrisModelType nyPrismodel = userControlPrismodel1.GetNyPrismodel();
+                SetMessage("Skifter prismodel til " + nyPrismodel.ToString());
+                try
+                {
+                    uRS_Utils.SkiftPrismodel(nyPrismodel, userControlPrismodel1.GetSystemleverandoerNummer());
+                    SetMessage("Prismodel skiftet til " + nyPrismodel.ToString());
+                }
+                catch (Exception f) { backgroundWorkerSendUdbudshaendelse.ReportProgress(0, "Fejl ved ændring af prismodel: " + f.Message); }
+            }
+        }
+
     }
 }

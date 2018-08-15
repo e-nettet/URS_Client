@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBoxSystemleverandoerID = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxMiljoe = new System.Windows.Forms.ComboBox();
@@ -49,8 +47,6 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxSystemleverandoerID, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.comboBoxMiljoe, 1, 0);
@@ -69,28 +65,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(670, 414);
             this.tableLayoutPanel1.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 75);
-            this.label3.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "SystemleverandørID";
-            // 
-            // textBoxSystemleverandoerID
-            // 
-            this.textBoxSystemleverandoerID.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxSystemleverandoerID.Location = new System.Drawing.Point(337, 77);
-            this.textBoxSystemleverandoerID.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxSystemleverandoerID.Name = "textBoxSystemleverandoerID";
-            this.textBoxSystemleverandoerID.Size = new System.Drawing.Size(331, 20);
-            this.textBoxSystemleverandoerID.TabIndex = 3;
-            this.textBoxSystemleverandoerID.TextChanged += new System.EventHandler(this.textBoxSystemleverandoerID_TextChanged);
             // 
             // label4
             // 
@@ -180,8 +154,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBoxMiljoe;
-        private System.Windows.Forms.TextBox textBoxSystemleverandoerID;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxPartID;
     }
 }

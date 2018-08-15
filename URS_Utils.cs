@@ -98,6 +98,7 @@ namespace URS_Client
 
             return (a);
         }
+
         public PrisModelHentResponseType GetPrisModelHentResponseType(DateTime dato) 
         {
             PrisModelHentRequestType request = new PrisModelHentRequestType
@@ -108,5 +109,17 @@ namespace URS_Client
             PrisModelHentResponseType response = client.PrisModelHent(request);
            return (response);
         }
+
+        public void SkiftPrismodel(PrisModelType prisModelType, int systemleverandoerNummer)
+        {
+            PrisModelTilmeldRequestType request = new PrisModelTilmeldRequestType()
+            {
+                PartId = afsender_partid,
+                PrisModel = prisModelType,
+                SystemleverandoerNummer = systemleverandoerNummer
+            };
+            PrisModelTilmeldResponseType response = client.PrisModelTilmeld(request);
+        }
+
     }
 }

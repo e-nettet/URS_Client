@@ -8,7 +8,6 @@ namespace URS_Client
         private string partID;
         private string jnummer;
         private string password;
-        private int systemleverandoerID;
         private Miljoe miljoe;
 
         public UserControlLogon()
@@ -17,7 +16,6 @@ namespace URS_Client
             comboBoxMiljoe.DataSource = Enum.GetValues(typeof(Miljoe));
         }
 
-        public int SystemleverandoerID { get => systemleverandoerID; set => systemleverandoerID = value; }
 
         public string Password { get => password; set => password = value; }
         public Miljoe Miljoe { get => miljoe; set => miljoe = value; }
@@ -34,10 +32,6 @@ namespace URS_Client
             Password = textBoxPassword.Text;
         }
 
-        private void textBoxSystemleverandoerID_TextChanged(object sender, EventArgs e)
-        {
-            systemleverandoerID = int.Parse( textBoxSystemleverandoerID.Text);
-        }
 
         private void textBoxPartID_TextChanged(object sender, EventArgs e)
         {
