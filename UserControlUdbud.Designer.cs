@@ -48,30 +48,27 @@
             this.textBoxSagsnummer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxSagsnummer.Location = new System.Drawing.Point(239, 2);
-            this.textBoxSagsnummer.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxSagsnummer.Location = new System.Drawing.Point(359, 3);
             this.textBoxSagsnummer.Name = "textBoxSagsnummer";
-            this.textBoxSagsnummer.Size = new System.Drawing.Size(234, 20);
+            this.textBoxSagsnummer.Size = new System.Drawing.Size(350, 26);
             this.textBoxSagsnummer.TabIndex = 0;
             this.textBoxSagsnummer.TextChanged += new System.EventHandler(this.textBoxSagsnummer_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(2, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 13);
+            this.label1.Size = new System.Drawing.Size(104, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Sagsnummer";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(2, 78);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(3, 120);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(54, 13);
+            this.label7.Size = new System.Drawing.Size(81, 20);
             this.label7.TabIndex = 17;
             this.label7.Text = "Kommune";
             // 
@@ -81,20 +78,18 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxKommune.FormattingEnabled = true;
-            this.comboBoxKommune.Location = new System.Drawing.Point(239, 80);
-            this.comboBoxKommune.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBoxKommune.Location = new System.Drawing.Point(359, 123);
             this.comboBoxKommune.Name = "comboBoxKommune";
-            this.comboBoxKommune.Size = new System.Drawing.Size(234, 21);
+            this.comboBoxKommune.Size = new System.Drawing.Size(350, 28);
             this.comboBoxKommune.TabIndex = 3;
             this.comboBoxKommune.SelectedIndexChanged += new System.EventHandler(this.comboBoxKommune_SelectedIndexChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(2, 104);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(3, 160);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 13);
+            this.label5.Size = new System.Drawing.Size(138, 20);
             this.label5.TabIndex = 13;
             this.label5.Text = "Ejendomsnummer";
             // 
@@ -103,20 +98,18 @@
             this.textBoxEjendomsnummer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxEjendomsnummer.Location = new System.Drawing.Point(239, 106);
-            this.textBoxEjendomsnummer.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxEjendomsnummer.Location = new System.Drawing.Point(359, 163);
             this.textBoxEjendomsnummer.Name = "textBoxEjendomsnummer";
-            this.textBoxEjendomsnummer.Size = new System.Drawing.Size(234, 20);
+            this.textBoxEjendomsnummer.Size = new System.Drawing.Size(350, 26);
             this.textBoxEjendomsnummer.TabIndex = 4;
             this.textBoxEjendomsnummer.TextChanged += new System.EventHandler(this.textBoxEjendomsnummer_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(2, 52);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(3, 80);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 13);
+            this.label3.Size = new System.Drawing.Size(44, 20);
             this.label3.TabIndex = 6;
             this.label3.Text = "Dato";
             // 
@@ -125,10 +118,9 @@
             this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(239, 54);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker1.Location = new System.Drawing.Point(359, 83);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(234, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(350, 26);
             this.dateTimePicker1.TabIndex = 2;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
@@ -138,20 +130,18 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxEjendomstype.FormattingEnabled = true;
-            this.comboBoxEjendomstype.Location = new System.Drawing.Point(239, 28);
-            this.comboBoxEjendomstype.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBoxEjendomstype.Location = new System.Drawing.Point(359, 43);
             this.comboBoxEjendomstype.Name = "comboBoxEjendomstype";
-            this.comboBoxEjendomstype.Size = new System.Drawing.Size(234, 21);
+            this.comboBoxEjendomstype.Size = new System.Drawing.Size(350, 28);
             this.comboBoxEjendomstype.TabIndex = 1;
             this.comboBoxEjendomstype.SelectedIndexChanged += new System.EventHandler(this.comboBoxEjendomstype_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(2, 26);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(3, 40);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 13);
+            this.label2.Size = new System.Drawing.Size(110, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Ejendomstype";
             // 
@@ -175,17 +165,16 @@
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.textBoxSagsnummer, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.richTextBox1, 1, 5);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 5);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(475, 256);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(712, 394);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // richTextBox1
@@ -194,20 +183,20 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox1.Enabled = false;
-            this.richTextBox1.Location = new System.Drawing.Point(240, 133);
+            this.richTextBox1.Location = new System.Drawing.Point(360, 205);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(232, 120);
+            this.richTextBox1.Size = new System.Drawing.Size(348, 184);
             this.richTextBox1.TabIndex = 18;
             this.richTextBox1.Text = "";
             // 
             // UserControlUdbud
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserControlUdbud";
-            this.Size = new System.Drawing.Size(478, 261);
+            this.Size = new System.Drawing.Size(717, 402);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

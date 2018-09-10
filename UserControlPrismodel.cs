@@ -24,6 +24,7 @@ namespace URS_Client
         public UserControlPrismodel()
         {
             InitializeComponent();
+            Dock = DockStyle.Fill;
             comboBoxNyPrismodel.DataSource = Enum.GetValues(typeof(PrisModelType));
         }
 

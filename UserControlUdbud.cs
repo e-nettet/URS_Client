@@ -14,6 +14,7 @@ namespace URS_Client
         public UserControlUdbud()
         {
             InitializeComponent();
+            Dock = DockStyle.Fill;
             comboBoxEjendomstype.DataSource = Enum.GetValues(typeof(EjendomstypeType));
             kommuner = DAWAUtils.GetKommuner();
             SetKommunerCombobox();
@@ -57,14 +58,11 @@ namespace URS_Client
             string s = ("000000" + textBoxEjendomsnummer.Text); // Formatet skal være 6 karakterer, så man tilføjer foranstilleder nuller
             s = s.Substring(s.Length - 6, 6);
 
-            haendelseType.RealPropertyStructure = new RealPropertyStructureType()
-            {
-                MunicipalityCode = kommuner[comboBoxKommune.SelectedIndex].kode,
-                   MunicipalRealPropertyIdentifier = s
-            };
-
+            haendelseType.RealPropertyStructure = new RealPropertyStructureType();
             try
             {
+                haendelseType.RealPropertyStructure.MunicipalityCode = kommuner[comboBoxKommune.SelectedIndex].kode;
+                haendelseType.RealPropertyStructure.MunicipalRealPropertyIdentifier = s;
                 haendelseType.AddressPostal = URS_Utils.GetAddressPostalType(
                 haendelseType.RealPropertyStructure.MunicipalityCode,
                 haendelseType.RealPropertyStructure.MunicipalRealPropertyIdentifier);

@@ -43,20 +43,18 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxAmetaSagsnummer.Enabled = false;
-            this.textBoxAmetaSagsnummer.Location = new System.Drawing.Point(313, 52);
-            this.textBoxAmetaSagsnummer.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxAmetaSagsnummer.Location = new System.Drawing.Point(470, 73);
             this.textBoxAmetaSagsnummer.Name = "textBoxAmetaSagsnummer";
-            this.textBoxAmetaSagsnummer.Size = new System.Drawing.Size(308, 20);
+            this.textBoxAmetaSagsnummer.Size = new System.Drawing.Size(461, 26);
             this.textBoxAmetaSagsnummer.TabIndex = 6;
             this.textBoxAmetaSagsnummer.TextChanged += new System.EventHandler(this.textBoxAmetaSagsnummer_TextChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(2, 50);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(3, 70);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(98, 13);
+            this.label6.Size = new System.Drawing.Size(151, 20);
             this.label6.TabIndex = 19;
             this.label6.Text = "AmetaSagsnummer";
             // 
@@ -66,29 +64,28 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxAmteaEjendomsmaegler.Enabled = false;
-            this.textBoxAmteaEjendomsmaegler.Location = new System.Drawing.Point(313, 27);
-            this.textBoxAmteaEjendomsmaegler.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxAmteaEjendomsmaegler.Location = new System.Drawing.Point(470, 38);
             this.textBoxAmteaEjendomsmaegler.Name = "textBoxAmteaEjendomsmaegler";
-            this.textBoxAmteaEjendomsmaegler.Size = new System.Drawing.Size(308, 20);
+            this.textBoxAmteaEjendomsmaegler.Size = new System.Drawing.Size(461, 26);
             this.textBoxAmteaEjendomsmaegler.TabIndex = 5;
             this.textBoxAmteaEjendomsmaegler.TextChanged += new System.EventHandler(this.textBoxAmteaEjendomsmaegler_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(2, 25);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(3, 35);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(118, 13);
+            this.label4.Size = new System.Drawing.Size(181, 20);
             this.label4.TabIndex = 18;
             this.label4.Text = "AmetaEjendomsmægler";
             // 
             // checkBoxAmetasag
             // 
             this.checkBoxAmetasag.AutoSize = true;
-            this.checkBoxAmetasag.Location = new System.Drawing.Point(3, 3);
+            this.checkBoxAmetasag.Location = new System.Drawing.Point(4, 5);
+            this.checkBoxAmetasag.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.checkBoxAmetasag.Name = "checkBoxAmetasag";
-            this.checkBoxAmetasag.Size = new System.Drawing.Size(76, 17);
+            this.checkBoxAmetasag.Size = new System.Drawing.Size(112, 24);
             this.checkBoxAmetasag.TabIndex = 21;
             this.checkBoxAmetasag.Text = "Ameta sag";
             this.checkBoxAmetasag.UseVisualStyleBackColor = true;
@@ -108,24 +105,24 @@
             this.tableLayoutPanel1.Controls.Add(this.textBoxAmteaEjendomsmaegler, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label6, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.textBoxAmetaSagsnummer, 1, 2);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 2);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(623, 349);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(934, 537);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // UserControlAmeta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "UserControlAmeta";
-            this.Size = new System.Drawing.Size(625, 353);
+            this.Size = new System.Drawing.Size(938, 543);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

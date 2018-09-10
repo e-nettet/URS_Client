@@ -13,6 +13,7 @@ namespace URS_Client
         public UserControlLogon()
         {
             InitializeComponent();
+            Dock = DockStyle.Fill;
             comboBoxMiljoe.DataSource = Enum.GetValues(typeof(Miljoe));
         }
 
@@ -32,11 +33,23 @@ namespace URS_Client
             Password = textBoxPassword.Text;
         }
 
+        private string TextToPartyID(string text)
+        {
+            string s = text;
+            s = s.Replace(":14", "");
+            s = ("5790000000000").Substring(0, 13 - s.Length) + s + ":14";
+            return (s);
+        }
 
         private void textBoxPartID_TextChanged(object sender, EventArgs e)
         {
             partID = textBoxPartID.Text;
 
+        }
+
+        private void textBoxPartID_Leave(object sender, EventArgs e)
+        {
+            textBoxPartID.Text = TextToPartyID(textBoxPartID.Text);
         }
     }
 }

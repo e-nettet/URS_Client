@@ -20,6 +20,7 @@ namespace URS_Client
         public UserControlAmeta()
         {
             InitializeComponent();
+            Dock = DockStyle.Fill;
         }
 
         private void SetComponents()

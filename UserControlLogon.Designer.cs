@@ -56,12 +56,12 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 6;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowCount = 5;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(670, 414);
             this.tableLayoutPanel1.TabIndex = 2;
@@ -72,17 +72,17 @@
             this.label4.Location = new System.Drawing.Point(8, 0);
             this.label4.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(28, 13);
+            this.label4.Size = new System.Drawing.Size(40, 20);
             this.label4.TabIndex = 6;
             this.label4.Text = "Miljø";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 25);
+            this.label1.Location = new System.Drawing.Point(8, 35);
             this.label1.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.Size = new System.Drawing.Size(55, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "PartID";
             // 
@@ -97,7 +97,7 @@
             this.comboBoxMiljoe.Location = new System.Drawing.Point(337, 2);
             this.comboBoxMiljoe.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxMiljoe.Name = "comboBoxMiljoe";
-            this.comboBoxMiljoe.Size = new System.Drawing.Size(331, 21);
+            this.comboBoxMiljoe.Size = new System.Drawing.Size(331, 28);
             this.comboBoxMiljoe.TabIndex = 0;
             this.comboBoxMiljoe.Text = "<Vælg miljø>";
             this.comboBoxMiljoe.SelectedIndexChanged += new System.EventHandler(this.ComboBoxMiljoe_SelectedIndexChanged);
@@ -105,10 +105,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 50);
+            this.label2.Location = new System.Drawing.Point(8, 70);
             this.label2.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.Size = new System.Drawing.Size(78, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Password";
             // 
@@ -117,21 +117,22 @@
             this.textBoxPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxPassword.Location = new System.Drawing.Point(337, 52);
+            this.textBoxPassword.Location = new System.Drawing.Point(337, 72);
             this.textBoxPassword.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(331, 20);
+            this.textBoxPassword.Size = new System.Drawing.Size(331, 26);
             this.textBoxPassword.TabIndex = 2;
             this.textBoxPassword.UseSystemPasswordChar = true;
             this.textBoxPassword.TextChanged += new System.EventHandler(this.TextBoxPassword_TextChanged);
             // 
             // textBoxPartID
             // 
-            this.textBoxPartID.Location = new System.Drawing.Point(338, 28);
+            this.textBoxPartID.Location = new System.Drawing.Point(338, 38);
             this.textBoxPartID.Name = "textBoxPartID";
-            this.textBoxPartID.Size = new System.Drawing.Size(329, 20);
+            this.textBoxPartID.Size = new System.Drawing.Size(329, 26);
             this.textBoxPartID.TabIndex = 1;
             this.textBoxPartID.TextChanged += new System.EventHandler(this.textBoxPartID_TextChanged);
+            this.textBoxPartID.Leave += new System.EventHandler(this.textBoxPartID_Leave);
             // 
             // UserControlLogon
             // 
